@@ -12,10 +12,10 @@ $ node my-koa-app.js
 
 ## Async Functions with Babel
 
-To use `async` functions in Koa in versions of node < 7.6, we recommend using [babel's require hook](http://babeljs.io/docs/usage/require/).
+To use `async` functions in Koa in versions of node < 7.6, we recommend using [babel's require hook](http://babeljs.io/docs/usage/babel-register/).
 
 ```js
-require('babel-core/register');
+require('babel-register');
 // require the rest of the app that needs to be transpiled after the hook
 const app = require('./app');
 ```
@@ -116,7 +116,7 @@ app.listen(3000);
 
 ## app.listen(...)
 
-  A Koa application is not a 1-to-1 representation of a HTTP server.
+  A Koa application is not a 1-to-1 representation of an HTTP server.
   One or more Koa applications may be mounted together to form larger
   applications with a single HTTP server.
 
